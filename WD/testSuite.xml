@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="OperationsWithSQL" verbose="1">
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+</listeners>
+<parameter name="grabScreenShot" value="false"/>
+<test name="collectDataOne" preserve-order="true" enabled="true">
+<parameter name="XML_Test" value="CliTest"/>
+<parameter name="XML_Params" value="url||http://api.dataatwork.org/v1/jobs/26bc4486dfd0f60b3bb0d8d64e001800"/>
+<classes>
+<class name="core.framework.test.ShellTest"/>
+</classes>
+</test>
+</suite>

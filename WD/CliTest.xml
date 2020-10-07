@@ -1,0 +1,63 @@
+<AWN_Test>
+   <AWN_Description>
+      <Case_Name></Case_Name>
+      <Case_Code>1</Case_Code>
+      <Awn_Versions/>
+      <Awn_ExecutionCondition>next</Awn_ExecutionCondition>
+   </AWN_Description>
+   <Awn_VarsIn>
+      <Meaning feature="">
+         <lbl>actualValue</lbl>
+         <value></value>
+      </Meaning>
+      <Meaning feature="import">
+         <lbl>url</lbl>
+         <value></value>
+      </Meaning>
+   </Awn_VarsIn>
+   <Awn_Steps>
+		<Awn_Step id="GetDataFromAPI">
+         <Step_Action action="HttpRequest">
+            <text>getting data</text>
+         </Step_Action>
+         <Step_Data>
+            <Block_Data>
+               <Meaning meaning_type="request_type">
+                  <lbl></lbl>
+                  <value>GET</value>
+                  <variable></variable>
+               </Meaning>
+               <Meaning meaning_type="url">
+                  <lbl></lbl>
+                  <value>$url$</value>
+                  <variable></variable>
+               </Meaning>
+               <Meaning meaning_type="response_code">
+                  <lbl></lbl>
+                  <value>actualValue</value>
+                  <variable></variable>
+               </Meaning>
+            </Block_Data>
+         </Step_Data>
+         <Step_Results>
+            <Block_Results>
+               <Step_Result type="criteria" meaning="compareJson">
+                  <ErrReaction>mark_fail</ErrReaction>
+                  <text></text>
+               </Step_Result>
+            </Block_Results>
+         </Step_Results>
+         <Step_Execute Execute="true"></Step_Execute>
+      </Awn_Step>
+   </Awn_Steps>
+   <Awn_Criterias>
+      <Awn_Criteria id="compareJson">
+         <Criteria_requirement type="compareVariables">
+            <Meaning feature="text" meaning_type="equal">
+               <lbl>actualValue</lbl>
+               <value>200</value>
+            </Meaning>
+         </Criteria_requirement>
+      </Awn_Criteria>
+   </Awn_Criterias>
+</AWN_Test>
